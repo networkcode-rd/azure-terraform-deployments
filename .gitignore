@@ -16,3 +16,4 @@ crash.log
 *.tfstate
 *.tfstate.*
 *.plan
+dependencytest.tf
