@@ -17,3 +17,4 @@ crash.log
 *.tfstate.*
 *.plan
 dependencytest.tf
+image.png
