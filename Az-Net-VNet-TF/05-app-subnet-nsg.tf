@@ -49,7 +49,7 @@ resource "azurerm_network_security_rule" "app-nsg-rule-allow-http" {
     for_each = local.web_inbound_ports_map
   name                        = "app-nsg-rule-allow-${each.value}"
   priority                    = each.key
-  direction                   = "Outbound"
+  direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
