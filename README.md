@@ -2,6 +2,4 @@
 IaC: Deploy using Terraform in Azure
 
 
-# Project-1
-
-![alt text](image.png)
+# Project with Azure Resources
