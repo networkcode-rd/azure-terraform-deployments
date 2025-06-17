@@ -18,3 +18,4 @@ crash.log
 *.plan
 dependencytest.tf
 image.png
+ssh-keys

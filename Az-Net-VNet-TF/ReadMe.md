@@ -7,3 +7,5 @@ Building vanilla Azure Virtual Network in a Resource Group by defining variables
 - Creation of Resource Group
 - Creation of Azure Virtual Network and Subnet.
 - Creation of NSG.
+- Creation of Linux VM
+- Accessing sample application on new Linux VM.
