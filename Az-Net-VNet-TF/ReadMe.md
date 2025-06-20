@@ -1,4 +1,4 @@
-# Project Title
+# Deploy Azure Linux VM with Terraform
 
 Building vanilla Azure Virtual Network in a Resource Group by defining variables.
 
