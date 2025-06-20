@@ -10,15 +10,4 @@ resource "azurerm_network_interface" "app-nic" {
       public_ip_address_id = azurerm_public_ip.app_linux_vm_public_ip.id
       primary = true
     }
-
-    ip_configuration {
-      name = "app-ip-config"
-      private_ip_address_allocation = "Dynamic"
-      subnet_id = azurerm_subnet.app-tier-subnet.id
-      public_ip_address_id = azurerm_public_ip.app_linux_vm_public_ip.id
-      primary = false
-    }
-
-
-  
 }
