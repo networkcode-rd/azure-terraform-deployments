@@ -7,5 +7,9 @@ Building vanilla Azure Virtual Network in a Resource Group by defining variables
 - Creation of Resource Group
 - Creation of Azure Virtual Network and Subnet.
 - Creation of NSG.
-- Creation of Linux VM
+- Creation of Linux VM(Ubuntu)
 - Accessing sample application on new Linux VM.
+- Deploying Azure Bastion related services(Subnet and NSG)
+- Creation of Azure Bastion
+
+Note: Please make sure the version and documentation are referred before trying to use the code block in your environment.
