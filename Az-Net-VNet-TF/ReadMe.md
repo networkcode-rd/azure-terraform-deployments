@@ -11,5 +11,8 @@ Building vanilla Azure Virtual Network in a Resource Group by defining variables
 - Accessing sample application on new Linux VM.
 - Deploying Azure Bastion related services(Subnet and NSG)
 - Creation of Azure Bastion
+- Creation of Azure LB and mapping the existing Linux VM in the Azure LB. Azure LB is of external Standard.
 
 Note: Please make sure the version and documentation are referred before trying to use the code block in your environment.
+
+Terraform Version: 1.11.x
