@@ -22,3 +22,16 @@ output "subnet_id" {
   description = "The ID of the Subnet"
   value       = azurerm_subnet.app-tier-subnet.id
 }
+
+#output frontend PubIP
+output "lb-pub-IP" {
+  description = "Value of the Public IP of Azure LB or Frontend IP"
+  value = azurerm_public_ip.lb-pip
+}
+
+# Load Balancer ID
+output "azure-lb_id" {
+  description = "Value of Az LB ID"
+  value = azurerm_lb.azure-std-lb-ext.id
+}
+
