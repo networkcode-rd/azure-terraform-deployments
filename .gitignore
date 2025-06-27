@@ -19,3 +19,5 @@ crash.log
 dependencytest.tf
 image.png
 ssh-keys
+main.tf
+terraform.tfvars
