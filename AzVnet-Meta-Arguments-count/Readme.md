@@ -116,4 +116,16 @@ The module can export outputs like:
 
 ---
 
-## 📂 Files Inclu
+## 📂 Files Included
+
+- `main.tf` – Core resources using `count`.
+- `variables.tf` – Input variable definitions.
+- `outputs.tf` – Outputs for integration.
+- `terraform.tfvars` – Your instance count configuration.
+- `README.md` – This documentation.
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
