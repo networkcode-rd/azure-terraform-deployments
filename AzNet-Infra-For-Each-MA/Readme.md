@@ -111,10 +111,10 @@ The module exports helpful outputs, including:
 
 ## 📂 Files Included
 
-- `main.tf` – Core infrastructure resources.
+- `main.tf` – Core infrastructure resources. (although you will not find this file in this Github repo, I have hidden it)
 - `variables.tf` – Input variable definitions.
 - `outputs.tf` – Exposed outputs for integrations.
-- `terraform.tfvars` – Your instance-specific VM map.
+- `terraform.tfvars` – Your instance-specific VM map. (although you will not find this file in this Github repo, I have hidden it)
 - `README.md` – This documentation.
 
 ---

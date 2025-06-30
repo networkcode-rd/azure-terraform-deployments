@@ -118,10 +118,10 @@ The module can export outputs like:
 
 ## 📂 Files Included
 
-- `main.tf` – Core resources using `count`.
+- `main.tf` – Core resources using `count`. (although you will not find this file in this Github repo, I have hidden it)
 - `variables.tf` – Input variable definitions.
 - `outputs.tf` – Outputs for integration.
-- `terraform.tfvars` – Your instance count configuration.
+- `terraform.tfvars` – Your instance count configuration. (although you will not find this file in this Github repo, I have hidden it)
 - `README.md` – This documentation.
 
 ---
