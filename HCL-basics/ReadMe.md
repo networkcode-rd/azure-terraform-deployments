@@ -1,6 +1,6 @@
-# 🚀 Using Hashicorp Local Provider`
+# 🚀 Using Hashicorp Local Provider
 
-This Terraform module provisions helps us in understanding how do we work with HCL and its respective local module or providers.
+This Terraform module helps us in understanding how do we work with HCL and its respective local module and provider.
 ---
 
 ## 📦 What This Module Creates
