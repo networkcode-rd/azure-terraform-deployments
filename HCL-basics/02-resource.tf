@@ -6,5 +6,6 @@ resource "local_file" "networkcode" {
 
 resource "local_sensitive_file" "networkcode_sense" {
   content  = "The whole content for this Github project, is to publish my work on Terraform.\n ~by \n Networkcode" 
-  filename = "${path.module}/networkcodesense.txt"
+  filename = "${path.module}/networkcodesense.${count.index}.txt"
+  count = 2
 }
