@@ -1,0 +1,70 @@
+
+==============================================================
+Terraform plan
+Terraform apply
+
+Terraform plan -out ./plan
+terraform apply "./plan"
+terraform apply -auto-approve
+
+terraform destroy
+terraform destroy -auto-approve
+
+
+terraform apply -h
+
+terraform destroy -target=local_file.demo-2
+					# <resource_type>.<resource_name>
+
+terraform state list
+
+terraform state show local_file.demo-2
+					# <resource_type>.<resource_name>
+
+terraform refresh
+
+terraform init
+terraform init -migrate-state
+terraform init -reconfigure
+
+terraform validate
+
+terraform init -upgraded
+
+terraform apply -destroy -auto-approve
+
+========================Config Commands===================================
+
+terraform fmt
+
+========================Show Commands======================================
+terraform state list
+
+terraform state show local_file.demo-1
+
+terraform show
+
+terraform show -json
+
+terraform providers
+
+terraform providers mirror <dir>
+==============================================================
+
+$env:ARM_USE_AZURE_AD = "true"
+
+
+===============================================================
+terraform output
+
+terraform output <filename>
+
+terraform refresh (modify the state file)
+
+terraform plan --refresh=false
+
+terraform graph
+(graphviz)
+
+
+
