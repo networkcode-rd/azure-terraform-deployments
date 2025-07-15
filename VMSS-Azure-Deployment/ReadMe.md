@@ -5,16 +5,29 @@ This Terraform configuration sets up a complete **Azure Virtual Machine Scale Se
 ---
 
 ## 📁 Project Structure
+# Terraform Azure VMSS Setup with Load Balancer
 
-├── main.tf # Root Terraform configuration (calls modules)
-├── variables.tf # Input variables
-├── outputs.tf # Output values
-├── terraform.tfvars # Variable values
-├── 01-resource-group.tf # Resource Group
-├── 02-network.tf # Virtual Network & Subnets
-├── 03-subnet-nsg.tf # NSG & Subnet NSG association
-├── 04-public-ip.tf # Public IP for Load Balancer
-├── 05-vmss.tf # Virtual Machine Scale Set configuration
-├── 06-vmss-nic.tf # Network interface setup for VMSS
-├── 07-load-balancer.tf # Load Balancer, backend pool, probe, and LB rule
-├── locals.tf # Local values and tags
+This Terraform configuration creates the following:
+
+- Azure Resource Group
+- Virtual Network and Subnet
+- Network Security Group with dynamic security rules
+- Public IP for Load Balancer
+- Azure Load Balancer (Standard SKU)
+  - Frontend IP
+  - Backend pool
+  - Health probe
+  - LB rule
+- Azure Virtual Machine Scale Set (VMSS)
+  - Custom Linux VMs
+  - Attached to backend pool
+
+## Usage
+
+1. Clone this repository.
+2. Update `terraform.tfvars` with your values.
+3. Initialize and apply:
+
+```bash
+terraform init
+terraform apply
