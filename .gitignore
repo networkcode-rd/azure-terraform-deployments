@@ -12,7 +12,7 @@ crash.log
 # *.tfvars
 # *.tfvars.json
 **/.terraform/
-**/.terraform.lock.hcl
+#**/.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
 *.plan
