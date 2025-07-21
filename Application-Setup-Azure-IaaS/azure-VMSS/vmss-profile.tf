@@ -1,17 +1,17 @@
 # Default Profile
 resource "azurerm_monitor_autoscale_setting" "az_vmss_autoscale" {
-  name                = "${local.resource_name_prefix}-vmss-autoscale-def-profiles"
-  resource_group_name = azurerm_resource_group.vmss-rg.name
-  location            = azurerm_resource_group.vmss-rg.location
+  name                = "${var.env-1}-vmss-autoscale-def-profiles"
+  resource_group_name = var.vmss_resource_group_name
+  location            = var.vmss_resource_group_location
   target_resource_id  = azurerm_linux_virtual_machine_scale_set.linux_web_vmss.id
 
-  # # Notification block
-  # notification {
-  #   email {
-  #     #send_to_subscription_administrator = true
-  #     custom_emails = ["use email ID here"]
-  #   }
-  # }
+#   # Notification block
+#   notification {
+#     email {
+#       #send_to_subscription_administrator = true
+#       custom_emails = ["use email ID here"]
+#     }
+#   }
 
   # Profile block
   profile {

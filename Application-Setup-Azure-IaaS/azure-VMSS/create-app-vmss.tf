@@ -28,12 +28,12 @@ CUSTOM_DATA
 
 
 resource "azurerm_linux_virtual_machine_scale_set" "linux_web_vmss" {
-  name                            = "${local.resource_name_prefix}-vmss-web"
-  resource_group_name             = azurerm_resource_group.vmss-rg.name
-  location                        = azurerm_resource_group.vmss-rg.location
+  name                            = "${var.env-1}-${var.regional_abbrv["centralindia"]}-vmss-web"
+  resource_group_name             = var.vmss_resource_group_name
+  location                        = var.vmss_resource_group_location
   sku                             = "Standard_D2s_v3"
-  admin_username                  = "adhocadmin"
-  admin_password                  = var.vm-passwrd
+  admin_username                  = var.vm-username
+  admin_password                  = var.vm-password
   disable_password_authentication = false
   instances                       = 2
 
@@ -57,10 +57,10 @@ resource "azurerm_linux_virtual_machine_scale_set" "linux_web_vmss" {
 
     ip_configuration {
       primary   = true
-      subnet_id = azurerm_subnet.subnet_default.id
+      subnet_id = var.vmss_ip_config_frm_subnet
       name      = "internal"
 
-      load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.bep-vmss.id]
+      load_balancer_backend_address_pool_ids = [var.mapping_vmss_to_lb]
     }
   }
 

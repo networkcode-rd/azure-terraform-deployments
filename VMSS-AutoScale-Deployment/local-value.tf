@@ -1,10 +1,10 @@
 # Defining naming convention for Business Unit
 locals {
-  division = var.business_unit
-  environment = var.env-1
+  division             = var.business_unit
+  environment          = var.env-1
   resource_name_prefix = "${var.business_unit}-${var.env-1}"
   common_tags = {
-    division = local.division
+    division    = local.division
     environment = local.environment
   }
 }
