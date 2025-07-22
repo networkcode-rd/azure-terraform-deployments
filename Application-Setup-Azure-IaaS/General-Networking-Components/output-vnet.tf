@@ -10,6 +10,10 @@ output "vnet__subnet_web_name_output" {
   value = azurerm_subnet.web-subnet.id
 }
 
+output "vnet_subnet_pe_name_output" {
+  value = azurerm_subnet.pe_subnet.id
+}
+
 output "hub_vnet_output" {
   value = azurerm_virtual_network.hub_vnet.id
 }

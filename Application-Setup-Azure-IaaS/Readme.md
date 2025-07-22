@@ -5,7 +5,7 @@ This Terraform-based infrastructure deploys a secure and scalable Azure network 
 ## 📐 Architecture Overview
 
 Image:
-![alt text](diaimage.png)
+![alt text](Azure_deployment_outline.png)
 
 
 ### 🔷 Components

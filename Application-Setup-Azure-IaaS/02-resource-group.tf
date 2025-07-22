@@ -61,7 +61,18 @@ module "get_vmss" {
   vmss_resource_group_name = azurerm_resource_group.tf-rg.name
   vmss_ip_config_frm_subnet = module.get_vnet_env-1.vnet__subnet_app_name_output
   mapping_vmss_to_lb = module.get_internal_lb.az_int_lb_backendpool_id
-  vm-password = var.vm-password
-  vm-username = var.vm-username
+  vm-password = "Password12345"
+  vm-username = "testing"
   depends_on = [ module.get_internal_lb ]
+}
+
+# Calling Private Endpoint configuration
+
+module "get_pe_paas_services" {
+  source = "./private-endpoint-PaaS"
+  pe_resource_group_location = azurerm_resource_group.tf-rg.location
+  pe_resource_group_name = azurerm_resource_group.tf-rg.name
+  pe_storage_link_var_id = module.get_storage.storage_account_name_output
+  pe_subnet_link_connection_var_id = module.get_vnet_env-1.vnet_subnet_pe_name_output
+  virtual_network_dns_id = module.get_vnet_env-1.vnet_name_output
 }
