@@ -12,4 +12,5 @@ resource "azurerm_storage_account" "storage_info" {
   location = var.location
   account_replication_type = var.storage_account_replication_type
   account_tier = var.account_tier
+  public_network_access_enabled = false
 }

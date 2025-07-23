@@ -9,26 +9,33 @@ variable "regional_abbrv" {
   }
 }
 
+# # Az-BU
+# variable "business_unit" {
+#   description = "Defining Buisness Unit"
+#   type = string
+#   default = "networkcode-core"
+# }
+
 # Az-env-1
 variable "env-1" {
   description = "Defining IT department"
   type        = string
-  default     = "stg"
+  default     = "Staging"
 }
 
-# # Az-env-2
-# variable "env-2" {
-#   description = "Defining Developer department"
-#   type = string
-#   default = "Dev"
-# }
+# Az-env-2
+variable "env-2" {
+  description = "Defining Developer department"
+  type        = string
+  default     = "Dev"
+}
 
-# # Az-env-3
-# variable "env-3" {
-#   description = "Defining Sales department"
-#   type = string
-#   default = "prd"
-# }
+# Az-env-3
+variable "env-3" {
+  description = "Defining Sales department"
+  type        = string
+  default     = "Prod"
+}
 
 # # Az-rg-name
 # variable "resource-grp-custom-name" {
@@ -65,17 +72,14 @@ variable "region-4" {
   default     = "eastus2"
 }
 
-variable "vnet_resource_group_name" {
-  description = "defining the RG in the root module"
-  type        = string
-}
+# variable "vm-password" {
+#   description = "Password for VM"
+#   sensitive = true
+#   type = string
+# }
 
-variable "vnet_resource_group_location" {
-  description = "defining the RG location in the root module"
-}
-
-variable "app_subnet_nsg_in_ports" {
-  description = "App VMSS NSG Inbound Ports"
-  type        = list(string)
-  default     = [22, 80, 443]
-}
+# variable "vm-username" {
+#   description = "Username for VM"
+#   sensitive = true
+#   type = string
+# }

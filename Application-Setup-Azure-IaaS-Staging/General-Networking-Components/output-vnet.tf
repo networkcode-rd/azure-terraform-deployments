@@ -33,3 +33,6 @@ output "isolate_vnet_output" {
 output "isolate_subnet1_output" {
   value = azurerm_subnet.isolate-subnet-1.id
 }
+
+
+# For UDR related
