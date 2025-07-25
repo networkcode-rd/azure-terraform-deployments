@@ -14,3 +14,11 @@ resource "azurerm_storage_account" "storage_info" {
   account_tier = var.account_tier
   public_network_access_enabled = false
 }
+
+resource "azurerm_storage_account_network_rules" "allow_local_ip" {
+  storage_account_id = azurerm_storage_account.storage_info.id
+
+  default_action             = "Deny"
+  ip_rules                   = ["49.37.134.83"]
+  bypass                     = ["AzureServices"]
+}

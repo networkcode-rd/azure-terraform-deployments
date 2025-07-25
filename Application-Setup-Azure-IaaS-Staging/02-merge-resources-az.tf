@@ -107,3 +107,13 @@ module "get_vpn_gw" {
   var_vpn_rg_name = azurerm_resource_group.tf-rg.name
   var_vng_subnet = module.get_vnet_env-1.hub_gw_sub_output
 }
+
+# Calling isolated VM confiugration
+
+module "get_isolated_vm" {
+  source = "./azure-vm"
+  var_vm_resource_group_location = azurerm_resource_group.tf-rg.location
+  var_vm_resource_group_name = azurerm_resource_group.tf-rg.name
+  var_isolated_subnet = module.get_vnet_env-1.isolate_subnet1_output
+  var_vm_pwd = "ASdwqe2324$"
+}
