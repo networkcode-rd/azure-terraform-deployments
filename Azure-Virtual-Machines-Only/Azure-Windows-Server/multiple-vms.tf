@@ -4,8 +4,8 @@ resource "azurerm_windows_virtual_machine" "vm_server_alt_win_block" {
   resource_group_name        = azurerm_resource_group.rg_reference.name
   location                   = azurerm_resource_group.rg_reference.location
   size                       = "Standard_F2"
-  admin_username             = "adminuser"
-  admin_password             = "P@$$w0rd1234!"
+  admin_username             = "asdsreaasd"
+  admin_password             = "adasdasdsa"
   network_interface_ids      = [element(azurerm_network_interface.nic_creation_win_alt_srv_block[*].id, count.index)]
   provision_vm_agent         = true
   allow_extension_operations = true

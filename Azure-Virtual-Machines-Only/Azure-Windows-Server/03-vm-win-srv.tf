@@ -3,8 +3,8 @@ resource "azurerm_windows_virtual_machine" "vm_server_win_block" {
   resource_group_name = azurerm_resource_group.rg_reference.name
   location            = azurerm_resource_group.rg_reference.location
   size                = "Standard_F2"
-  admin_username      = "adminuser"
-  admin_password      = "P@$$w0rd1234!"
+  admin_username      = "dasdsadasdsad"
+  admin_password      = "adsasdsadasd"
   network_interface_ids = [
     azurerm_network_interface.nic_creation_win_srv_block.id,
   ]
