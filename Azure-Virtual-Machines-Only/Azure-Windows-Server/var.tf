@@ -56,3 +56,21 @@ variable "meta_argu_vm" {
   default     = 1
   type        = number
 }
+
+variable "var_win_username" {
+  description = "Put the username"
+  type = string
+  sensitive = false
+}
+
+variable "var_win_pswd" {
+  description = "Put the password"
+  type = string
+  sensitive = true
+}
+
+variable "var_source_ip_address" {
+  description = "Put the source IP address to put it in NSG"
+  type = string
+  sensitive = false
+}

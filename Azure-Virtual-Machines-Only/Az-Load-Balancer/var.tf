@@ -46,35 +46,28 @@ variable "region_only_5" {
 }
 
 
-variable "vnet_address_space" {
-  description = "describing final value in .tfvars"
-  type        = string
-}
 
-
-variable "sub1_address_space" {
-  description = "describing final value in .tfvars"
-  type        = string
-}
-
-variable "sub2_address_space" {
-  description = "describing final value in .tfvars"
-  type        = string
-}
-
-variable "admin_username" {
-  description = "prompt will come on the screen for input"
-  sensitive   = false
-  type        = string
-}
-
-variable "vm_password" {
-  description = "prompt will come on the screen for input"
-  sensitive   = true
-  type        = string
-}
-
-variable "source_address_prefix" {
-  description = "Define when prompted"
+variable "vnet_information_linux" {
+  description = "passing the VNet value of Linux VM"
   type = string
+  default = "/subscriptions/bec0324e-4ff3-4e18-8d7b-2741bb57234f/resourceGroups/eng-staging-CIN-tf-rg/providers/Microsoft.Network/virtualNetworks/eng-staging-CIN-vnet-tf"
 }
+
+variable "bep_ipadresses" {
+  description = "describing final value from modules"
+  type = string
+  default = "10.30.0.4"
+}
+
+
+# variable "vnet_id_windows" {
+#   description = "passing the VNet ID"
+#   type = string
+#   default = "/subscriptions/bec0324e-4ff3-4e18-8d7b-2741bb57234f/resourceGroups/devnet-cenin-tf-rg/providers/Microsoft.Network/virtualNetworks/devnet-vnet-tf"
+# }
+
+# variable "ip_address_windows" {
+#   description = "passing the VM IP"
+#   type = string
+#   default = "10.1.0.4"
+# }
