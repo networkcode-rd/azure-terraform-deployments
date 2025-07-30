@@ -76,5 +76,15 @@ variable "vm_password" {
 
 variable "source_address_prefix" {
   description = "Define when prompted"
-  type = string
+  type        = string
+}
+
+
+variable "var_instance_count" {
+  description = "defining the number of instances"
+  type        = map(string)
+  default = {
+    "lin-vm-1" = "101"
+    "lin-vm-2" = "102"
+  }
 }

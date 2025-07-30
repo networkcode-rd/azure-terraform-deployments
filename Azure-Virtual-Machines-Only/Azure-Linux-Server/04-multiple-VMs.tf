@@ -1,17 +1,18 @@
+
 # Resource: Azure VM using Linux OS
-resource "azurerm_linux_virtual_machine" "test_vm_linux" {
-  name                            = "${local.name_prefix}-test-vm"
+resource "azurerm_linux_virtual_machine" "multiple_vm_linux" {
+    for_each = var.var_instance_count
+  name                            = "${local.name_prefix}-${each.key}"
   location                        = azurerm_resource_group.az_tf_rg.location
   resource_group_name             = azurerm_resource_group.az_tf_rg.name
   size                            = "standard_d2s_v3"
   admin_username                  = var.admin_username
   admin_password                  = var.vm_password
   disable_password_authentication = false
-  network_interface_ids           = [azurerm_network_interface.primary_nic.id]
+  network_interface_ids           = [azurerm_network_interface.multiple_primary_nic[each.key].id]
 
 
   os_disk {
-    name                 = "test-linux-vm-osdisk"
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
@@ -32,14 +33,15 @@ resource "azurerm_linux_virtual_machine" "test_vm_linux" {
 }
 
 
-resource "azurerm_network_interface" "primary_nic" {
-  name                = "primary_nic"
+resource "azurerm_network_interface" "multiple_primary_nic" {
+  for_each            = var.var_instance_count
+  name                = "${local.name_prefix}-primary-nic-${each.key}"
   location            = azurerm_resource_group.az_tf_rg.location
   resource_group_name = azurerm_resource_group.az_tf_rg.name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.subnet_1.id
+    subnet_id                     = azurerm_subnet.subnet_2.id
     private_ip_address_allocation = "Dynamic"
   }
 }

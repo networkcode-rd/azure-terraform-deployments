@@ -14,3 +14,12 @@ resource "azurerm_subnet" "subnet_1" {
   address_prefixes     = [var.sub1_address_space]
   service_endpoints    = ["Microsoft.KeyVault"]
 }
+
+
+resource "azurerm_subnet" "subnet_2" {
+  name                 = "linux_server_sec_B"
+  resource_group_name  = azurerm_resource_group.az_tf_rg.name
+  virtual_network_name = azurerm_virtual_network.az_vnet_linux_tf.name
+  address_prefixes     = [var.sub2_address_space]
+  service_endpoints    = ["Microsoft.KeyVault"]
+}
