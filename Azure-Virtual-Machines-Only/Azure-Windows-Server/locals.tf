@@ -11,3 +11,13 @@ locals {
     platform   = "Terraform"
   }
 }
+
+
+# Using for NSG rules
+
+locals {
+  inb_port = {
+    "101" : "80"
+    "102" : "22"
+  }
+}
