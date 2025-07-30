@@ -18,8 +18,8 @@ The following architecture diagram represents the infrastructure components prov
 ### Components
 
 - **Virtual Machines**
-  - `eng-staging-CIN-lin-vm-1`: A standalone Ubuntu VM.
-  - `eng-lin-0`, `eng-lin-1`: Multiple Ubuntu VMs created using the `for_each` meta-argument.
+  - `eng-staging-CIN-test-vm`: A standalone Ubuntu VM.
+  - `eng-staging-CIN-lin-vm-1`, `eng-staging-CIN-lin-vm-2`: Multiple Ubuntu VMs created using the `for_each` meta-argument.
 
 - **Network Interfaces**
   - Each VM is associated with a dedicated NIC, named uniquely per instance.
