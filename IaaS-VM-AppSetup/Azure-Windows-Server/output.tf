@@ -2,8 +2,16 @@ output "out_rg_id" {
   value = azurerm_resource_group.rg_reference.id
 }
 
+output "out_rg_name" {
+  value = azurerm_resource_group.rg_reference.name
+}
+
 output "out_vnet_id" {
   value = azurerm_virtual_network.server_vnet_win.id
+}
+
+output "out_vnet_name_win" {
+  value = azurerm_virtual_network.server_vnet_win.name
 }
 
 output "out_subnet_id" {
@@ -25,4 +33,11 @@ output "out_vm_alt_nic_id" {
 
 output "out_vm_alt_id" {
   value = azurerm_windows_virtual_machine.vm_server_alt_win_block[*].id
+}
+
+output "out_private_ip_address_block" {
+  value = [
+    for nic in azurerm_network_interface.nic_creation_win_alt_srv_block: 
+    nic.private_ip_address
+  ]
 }

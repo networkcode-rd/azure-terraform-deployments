@@ -2,8 +2,16 @@ output "output_rg_id" {
   value = azurerm_resource_group.az_tf_rg.id
 }
 
+output "output_rg_name" {
+  value = azurerm_resource_group.az_tf_rg.name
+}
+
 output "output_vnet_id" {
   value = azurerm_virtual_network.az_vnet_linux_tf.id
+}
+
+output "output_vnet_name_lnx" {
+  value = azurerm_virtual_network.az_vnet_linux_tf.name
 }
 
 output "output_subnet_1_id" {

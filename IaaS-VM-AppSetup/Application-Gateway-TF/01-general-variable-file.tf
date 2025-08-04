@@ -72,14 +72,4 @@ variable "region-4" {
   default     = "eastus2"
 }
 
-variable "vm-password" {
-  description = "Password for VM"
-  sensitive = true
-  type = string
-}
 
-variable "vm-username" {
-  description = "Username for VM"
-  sensitive = true
-  type = string
-}
