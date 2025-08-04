@@ -79,10 +79,10 @@ Example:
 data "terraform_remote_state" "calling_hub_lnx_resources" {
   backend = "azurerm"
   config = {
-    resource_group_name  = "Az-rd-104"
-    storage_account_name = "azstoragelearningrd"
-    container_name       = "azuretffile"
-    key                  = "azurelinuxstatefile"
+    resource_group_name  = "resource_group_name"
+    storage_account_name = "storagename"
+    container_name       = "containername"
+    key                  = "blobname"
   }
 }
 ```
