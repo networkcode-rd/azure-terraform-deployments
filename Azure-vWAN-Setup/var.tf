@@ -53,7 +53,7 @@ variable "team_name" {
 
 variable "resources_type" {
   description = "describing type of resources in .tfvars"
-  type = string
+  type        = string
 }
 
 variable "vnet_address_dev" {
@@ -96,7 +96,7 @@ variable "sbnet_address_1" {
 
 variable "src_add_hm_isp" {
   description = "IP address of your home ISP define it in .tfvars"
-  type = string
+  type        = string
 }
 
 variable "sbnet_address_1_prd" {
@@ -116,6 +116,50 @@ variable "sbnet_address_3_prd" {
 
 variable "vm_password" {
   description = "put it when prompted"
-  type = string
-  sensitive = true
+  type        = string
+  sensitive   = true
 }
+
+# Alternate Prod VNetconfiguration ===============================
+variable "vnet_address_app_prd" {
+  description = "describing type of resources in .tfvars"
+  type = list(string)
+}
+
+variable "sbnet_address_1_app_prd" {
+  description = "describing type of resources in .tfvars"
+  type = list(string)  
+}
+
+variable "sbnet_address_appgw_2_prd" {
+  description = "describing type of resources in .tfvars"
+  type = list(string)  
+}
+
+
+# App Prod configuration ===============================
+
+
+# variable "ph_app_subnet_id" {
+#   description = "describing type of resources in .tfvars"
+#   type = string
+# }
+
+
+# variable "ph_virtual_network" {
+#   description = "describing type of resources in .tfvars"
+#   type = string  
+# }
+
+# variable "vm_passwrd" {
+#   description = "defining password in child module"
+#   type = string
+#   sensitive = true
+#   default = "Testing@123456"
+# }
+
+
+# variable "ph_subnet_appgw_id" {
+#   description = "describing type of resources in .tfvars"
+#   type = string
+# }

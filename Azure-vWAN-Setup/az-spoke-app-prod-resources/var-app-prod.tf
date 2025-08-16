@@ -26,24 +26,9 @@ variable "location_attribute" {
 # }
 
 variable "region_2" {
-  description = "describing region // declared in .tfvars"
+  description = "describing region East Asia related // declared in .tfvars"
   type        = string
 }
-
-# variable "region_3" {
-#   description = "describing region // declared in .tfvars"
-#   type        = string
-# }
-
-# variable "region_4" {
-#   description = "describing region // declared in .tfvars"
-#   type        = string
-# }
-
-# variable "region_5" {
-#   description = "describing region // declared in .tfvars"
-#   type        = string
-# }
 
 
 variable "team_name" {
@@ -66,28 +51,32 @@ variable "ph_resource_group_name" {
   type = string
 }
 
-variable "ph_subnet_id" {
+variable "ph_app_subnet_id" {
   description = "describing type of resources in .tfvars"
   type = string
 }
 
-variable "ph_storage_account" {
-  description = "describing type of resources in .tfvars"
-  type = string
-}
 
 variable "ph_virtual_network" {
   description = "describing type of resources in .tfvars"
   type = string  
 }
 
-variable "ph_subnet_2_id" {
+variable "vm_passwrd" {
+  description = "defining password in child module"
+  type = string
+  sensitive = true
+  default = "Testing@123456"
+}
+
+
+variable "ph_subnet_appgw_id" {
   description = "describing type of resources in .tfvars"
   type = string
 }
 
 
-variable "ph_subnet_3_id" {
+variable "private_dns_zone_name" {
   description = "describing type of resources in .tfvars"
   type = string
 }

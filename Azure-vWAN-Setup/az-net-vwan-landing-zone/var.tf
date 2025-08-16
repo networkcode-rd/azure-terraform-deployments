@@ -40,10 +40,10 @@ variable "region_4" {
   type        = string
 }
 
-variable "region_5" {
-  description = "describing region // declared in .tfvars"
-  type        = string
-}
+# variable "region_5" {
+#   description = "describing region // declared in .tfvars"
+#   type        = string
+# }
 
 
 variable "team_name" {
@@ -53,4 +53,25 @@ variable "team_name" {
 
 variable "resources_type" {
   description = "describing type of resources in .tfvars"
+  type        = string
+}
+
+variable "ph_name_rg" {
+  description = "place holder for using RG name"
+  type        = string
+}
+
+variable "ph_location_rg" {
+  description = "place holder for using RG location"
+  type        = string
+}
+
+variable "remote_vnet_from_EaVhub" {
+  description = "place holder for creating the VNet connection using remote VNet"
+  type        = string
+}
+
+variable "remote_vnet_from_CIVhub" {
+  description = "place holder for creating the VNet connection using remote VNet"
+  type        = string
 }

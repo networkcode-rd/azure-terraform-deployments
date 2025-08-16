@@ -8,6 +8,7 @@ resource "azurerm_lb" "az_ilb_resource" {
   frontend_ip_configuration {
     name                 = "fe-pvt-ip"
     private_ip_address_allocation = "Dynamic"
+    subnet_id = var.update_in_main_location_subnet_dev_1
   }
 }
 
@@ -22,7 +23,7 @@ resource "azurerm_lb_backend_address_pool_address" "az_dev_ilb_bep_addr" {
     for_each = azurerm_network_interface.app-nic
   name                                = "bep-${each.key}"
   backend_address_pool_id             = azurerm_lb_backend_address_pool.az_dev_ilb_bep_name.id
-  virtual_network_id = var.update_in_main_location_vnet_prd_1
+  virtual_network_id = var.update_in_main_location_vnet_dev_1
   ip_address = each.value.ip_configuration[0].private_ip_address
 }
 

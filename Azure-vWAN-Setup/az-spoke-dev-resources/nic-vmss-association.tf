@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "app-nic" {
     ip_configuration {
       name = "app-ip-config"
       private_ip_address_allocation = "Dynamic"
-      subnet_id = var.update_in_main_location_subnet_prd_1
+      subnet_id = var.update_in_main_location_subnet_dev_1
       primary = true
     }
 }

@@ -47,4 +47,16 @@ output "out_sub_3_prod" {
   value = azurerm_subnet.prd_subnet_3.id
 }
 
-# Defining output values of VNet, Subnet, NSG of QA
+# Defining output values of App Prod VNet
+
+output "out_app_vnet_id" {
+  value = azurerm_virtual_network.prod2_vnet.id
+}
+
+output "out_subnet_app_prd_id" {
+  value = azurerm_subnet.prd2_app_subnet_1.id
+}
+
+output "out_subnet_appgw_prd_id" {
+  value = azurerm_subnet.prd2_appgw_subnet_2.id
+}

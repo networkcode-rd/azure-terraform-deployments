@@ -1,6 +1,6 @@
 locals {
   environment = var.environment_name
-  name_prefix = "${var.department_name}-${var.location_attribute["site1"]}"
+  name_prefix = "${var.department_name}-${var.location_attribute["site2"]}"
   team        = var.team_name
   resources_types= var.resources_type
   common_tags = {

@@ -71,7 +71,6 @@ variable "vnet_rg_placeholder_location" {
   type        = string
 }
 
-
 variable "sbnet_address_1" {
   description = "describing it in .tfvars"
   type        = list(string)
@@ -95,6 +94,21 @@ variable "sbnet_address_2_prd" {
 }
 
 variable "sbnet_address_3_prd" {
+  description = "describing it in .tfvars"
+  type        = list(string)
+}
+
+variable "vnet_address_app_prd" {
+  description = "describing it in .tfvars"
+  type        = list(string) 
+}
+
+variable "sbnet_address_1_app_prd" {
+  description = "describing it in .tfvars"
+  type        = list(string)
+}
+
+variable "sbnet_address_appgw_2_prd" {
   description = "describing it in .tfvars"
   type        = list(string)
 }

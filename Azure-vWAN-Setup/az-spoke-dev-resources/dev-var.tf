@@ -82,12 +82,12 @@ variable "update_in_main_location_rg" {
   type = string
 }
 
-variable "update_in_main_location_subnet_prd_1" {
+variable "update_in_main_location_subnet_dev_1" {
   description = "Update the RG value in .tfvar file under root"
   type = string
 }
 
-variable "update_in_main_location_vnet_prd_1" {
+variable "update_in_main_location_vnet_dev_1" {
   description = "Update the RG value in .tfvar file under root"
   type = string
 }

@@ -64,3 +64,39 @@ resource "azurerm_network_security_rule" "prd-subnet3-nsg" {
   resource_group_name         = var.vnet_rg_placeholder_name
   network_security_group_name = azurerm_network_security_group.prd-sub3-nsg.name
 }
+
+
+
+# Configutation for app-prd subnet
+resource "azurerm_network_security_rule" "prd-app-nsg-rules" {
+    for_each = local.nsg_ports
+  name                        = "${each.value}-port-in"
+  priority                    = each.key
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = each.value
+  source_address_prefix       = var.src_add_hm_isp
+  destination_address_prefix  = "*"
+  resource_group_name         = var.vnet_rg_placeholder_name
+  network_security_group_name = azurerm_network_security_group.prd-app-nsg.name
+}
+
+
+
+# Configutation for app-prd subnet
+resource "azurerm_network_security_rule" "prd-appGW-nsg-rules" {
+    for_each = local.nsg_ports
+  name                        = "${each.value}-port-in"
+  priority                    = each.key
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = each.value
+  source_address_prefix       = var.src_add_hm_isp
+  destination_address_prefix  = "*"
+  resource_group_name         = var.vnet_rg_placeholder_name
+  network_security_group_name = azurerm_network_security_group.prd-appGW-nsg.name
+}

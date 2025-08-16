@@ -33,3 +33,20 @@ resource "azurerm_network_security_group" "prd-sub3-nsg" {
   resource_group_name = var.vnet_rg_placeholder_name
   tags = local.common_tags
 }
+
+
+
+# Configutation for app-prd subnet
+resource "azurerm_network_security_group" "prd-app-nsg" {
+  name                = "${local.subnet-1_name}-prdapp-nsg"
+  location            = var.region_2
+  resource_group_name = var.vnet_rg_placeholder_name
+  tags = local.common_tags
+}
+
+resource "azurerm_network_security_group" "prd-appGW-nsg" {
+  name                = "${local.subnet-1_name}-appGW-nsg"
+  location            = var.region_2
+  resource_group_name = var.vnet_rg_placeholder_name
+  tags = local.common_tags
+}
