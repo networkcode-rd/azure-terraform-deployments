@@ -9,7 +9,7 @@ resource "azurerm_route_table" "route_table_app" {
     name                   = "dev_returnroute"
     address_prefix         = "172.16.0.0/24"
     next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = "10.10.1.1"
+    next_hop_in_ip_address = "172.19.0.4"
   }
 }
 
