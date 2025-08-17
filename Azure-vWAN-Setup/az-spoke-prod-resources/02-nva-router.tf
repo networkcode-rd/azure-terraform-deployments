@@ -53,4 +53,5 @@ resource "azurerm_public_ip" "nva_public_IP" {
   sku = "Standard"
   location = var.ph_resource_group_location
   resource_group_name = var.ph_resource_group_name
+  ddos_protection_mode = "Disabled"
 }

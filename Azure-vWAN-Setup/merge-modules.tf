@@ -73,7 +73,7 @@ module "call_to_prod_env" {
 module "calling_app_prod_config" {
   source = "./az-spoke-app-prod-resources"
   ph_resource_group_name = azurerm_resource_group.vwan_setup_rg.name
-  ph_resource_group_location = azurerm_resource_group.vwan_setup_rg.location
+  ph_resource_group_location = var.region_2
   ph_app_subnet_id = module.calling_vnet_resources.out_subnet_app_prd_id
   private_dns_zone_name = module.call_to_prod_env.out_private_dns_zone_name
   ph_subnet_appgw_id = module.calling_vnet_resources.out_subnet_appgw_prd_id

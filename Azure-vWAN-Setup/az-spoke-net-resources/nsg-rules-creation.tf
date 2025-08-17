@@ -87,7 +87,7 @@ resource "azurerm_network_security_rule" "prd-app-nsg-rules" {
 
 # Configutation for app-prd subnet
 resource "azurerm_network_security_rule" "prd-appGW-nsg-rules" {
-    for_each = local.nsg_ports
+    for_each = local.appgw_nsg_ports
   name                        = "${each.value}-port-in"
   priority                    = each.key
   direction                   = "Inbound"
@@ -95,7 +95,7 @@ resource "azurerm_network_security_rule" "prd-appGW-nsg-rules" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = each.value
-  source_address_prefix       = var.src_add_hm_isp
+  source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.vnet_rg_placeholder_name
   network_security_group_name = azurerm_network_security_group.prd-appGW-nsg.name

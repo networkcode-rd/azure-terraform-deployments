@@ -4,6 +4,7 @@ resource "azurerm_public_ip" "appgw_pubip_config" {
   location            = var.ph_resource_group_location
   allocation_method   = "Static"
   sku = "Standard"
+  ddos_protection_mode = "Disabled"
   timeouts {
     create = "2h"
     update = "2h"
@@ -18,8 +19,8 @@ resource "azurerm_application_gateway" "appgw" {
   tags = local.common_tags
 
   sku {
-    name     = "WAF_v2"
-    tier     = "WAF_v2"
+    name     = "Standard_v2"
+    tier     = "Standard_v2"
     capacity = 2
   }
 
@@ -40,7 +41,8 @@ frontend_ip_configuration {
 
 frontend_ip_configuration {
   name                          = "private-frontend"
-  private_ip_address_allocation = "Static" # or Dynamic
+  private_ip_address_allocation = "Static"
+  private_ip_address = "172.20.1.254"
   subnet_id                     = var.ph_subnet_appgw_id
 }
 
@@ -60,7 +62,7 @@ frontend_ip_configuration {
 
   http_listener {
     name                           = local.listener_name
-    frontend_ip_configuration_name = local.frontend_ip_configuration_name
+    frontend_ip_configuration_name = "private-frontend"
     frontend_port_name             = local.frontend_port_name
     protocol                       = "Http"
   }
@@ -74,3 +76,4 @@ frontend_ip_configuration {
     backend_http_settings_name = local.http_setting_name
   }
 }
+
