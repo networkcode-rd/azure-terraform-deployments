@@ -3,3 +3,10 @@ resource "random_string" "random-value" {
  upper = false
  special = false
 }
+
+resource "random_string" "fqdn" {
+  length = 6
+  special = false
+  upper = false
+  numeric = false
+}

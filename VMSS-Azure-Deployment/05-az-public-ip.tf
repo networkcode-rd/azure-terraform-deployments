@@ -3,4 +3,5 @@ resource "azurerm_public_ip" "vmssPubIP"{
   resource_group_name = azurerm_resource_group.vmss-rg.name
   location = azurerm_resource_group.vmss-rg.location
   allocation_method = "Static"
+  domain_name_label = random_string.fqdn.result
 }
