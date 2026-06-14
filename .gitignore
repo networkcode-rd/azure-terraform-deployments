@@ -21,3 +21,7 @@ image.png
 ssh-keys
 main.tf
 terraform.tfvars
+az-commands.txt
+01-Basics
+02-Modules-Basics
+AppGw-DNS-Setup-004-tf
