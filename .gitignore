@@ -25,3 +25,10 @@ az-commands.txt
 01-Basics
 02-Modules-Basics
 AppGw-DNS-Setup-004-tf
+**/.env
+**/node_modules/
+**/.terraform/
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/*.pem
+az-commands.txt
